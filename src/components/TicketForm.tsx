@@ -49,7 +49,7 @@ export default function EditTicketForm({ ticket }: { ticket: TicketType }) {
         headers: {
           "Content-type": "application/json",
         },
-        body: JSON.stringify({ formData }),
+        body: JSON.stringify({ formData, email: "dalinnx1@gmail.com" }),
       });
       if (!res.ok) {
         throw new Error("Failed to update ticket");
@@ -60,7 +60,7 @@ export default function EditTicketForm({ ticket }: { ticket: TicketType }) {
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({ formData }),
+        body: JSON.stringify({ formData, email:"dalinnx1@gmail.com" }),
       });
       if (!res.ok) {
         throw new Error("Failed to create ticket");

@@ -21,7 +21,7 @@ export async function POST(req: Request) {
     const ticketData = body.formData;
     const ticket = new Ticket(ticketData);
     await ticket.save();
-    sendEmail(ticketData.title, ticketData.description);
+    sendEmail(ticketData.title, ticketData.description, body.email);
     return NextResponse.json({ message: "Ticket Created" }, { status: 201 });
   } catch (error) {
     console.error(error);
