@@ -21,6 +21,7 @@ export async function POST(req: Request) {
     const ticketData = body.formData;
     const ticket = new Ticket(ticketData);
     await ticket.save();
+    console.log(body.email);
     sendEmail(
       ticketData.title,
       ticketData.description,
